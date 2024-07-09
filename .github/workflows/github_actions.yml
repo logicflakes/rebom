@@ -59,5 +59,5 @@ jobs:
           reliza_api_url: https://test.relizahub.com
           path: helm
           reliza_project_id: 85190301-6fea-463d-9465-06ef88a1bafd
-          enable_sbom: 'true'
+          enable_sbom: 'false'
 
