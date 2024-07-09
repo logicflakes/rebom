@@ -23,6 +23,7 @@ jobs:
           reliza_api_url: https://test.relizahub.com
           path: backend
           reliza_project_id: 994f74d6-8c62-4fe3-8d97-5e36600527dd
+          enable_sbom: 'true'
   build-frontend:
     name: Build And Push Frontend
     runs-on: ubuntu-latest
@@ -40,3 +41,23 @@ jobs:
           reliza_api_url: https://test.relizahub.com
           path: frontend
           reliza_project_id: 59cd4dd5-01bb-4ff7-be20-766e0161cb49
+          enable_sbom: 'true'
+
+  build-helm:
+    name: Build And Push Helm Chart
+    runs-on: ubuntu-latest
+    steps:
+      - name: RelizaHub Build And Submit Release metadata action
+        uses: relizaio/reliza-helm-action@master
+        with:
+          registry_username: ${{ secrets.DOCKER_LOGIN }}
+          registry_password: ${{ secrets.DOCKER_TOKEN }}
+          registry_host: registry.relizahub.com/library
+          helm_chart_name: rebom
+          reliza_api_id: ${{ secrets.RELIZA_API_ID }}
+          reliza_api_key: ${{ secrets.RELIZA_API_KEY }}
+          reliza_api_url: https://test.relizahub.com
+          path: helm
+          reliza_project_id: 85190301-6fea-463d-9465-06ef88a1bafd
+          enable_sbom: 'true'
+
