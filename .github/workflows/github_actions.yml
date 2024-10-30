@@ -10,37 +10,35 @@ jobs:
     name: Build And Push Backend
     runs-on: ubuntu-latest
     steps:
-      - name: RelizaHub Build And Submit Release metadata action
-        uses: relizaio/reliza-docker-action@2.1
+      - name: Rearm Build And Submit Release metadata action
+        uses: relizaio/rearm-docker-action@main
         with:
           registry_username: ${{ secrets.DOCKER_LOGIN }}
           registry_password: ${{ secrets.DOCKER_TOKEN }}
           registry_host: registry.relizahub.com
           image_namespace: registry.relizahub.com/d94ef72b-5c1b-486e-9af9-dfd5740e93d8-private
           image_name: rebom-backend
-          reliza_api_id: ${{ secrets.RELIZA_API_ID }}
-          reliza_api_key: ${{ secrets.RELIZA_API_KEY }}
-          reliza_api_url: https://test.relizahub.com
+          rearm_api_id: ${{ secrets.REARM_API_ID }}
+          rearm_api_key: ${{ secrets.REARM_API_KEY }}
           path: backend
-          reliza_project_id: 994f74d6-8c62-4fe3-8d97-5e36600527dd
+          rearm_project_id: c96d44ce-c8ff-4211-a402-baa392973b45
           enable_sbom: 'true'
   build-frontend:
     name: Build And Push Frontend
     runs-on: ubuntu-latest
     steps:
       - name: RelizaHub Build And Submit Release metadata action
-        uses: relizaio/reliza-docker-action@2.1
+        uses: relizaio/rearm-docker-action@main
         with:
           registry_username: ${{ secrets.DOCKER_LOGIN }}
           registry_password: ${{ secrets.DOCKER_TOKEN }}
           registry_host: registry.relizahub.com
           image_namespace: registry.relizahub.com/d94ef72b-5c1b-486e-9af9-dfd5740e93d8-private
           image_name: rebom-frontend
-          reliza_api_id: ${{ secrets.RELIZA_API_ID }}
-          reliza_api_key: ${{ secrets.RELIZA_API_KEY }}
-          reliza_api_url: https://test.relizahub.com
+          rearm_api_id: ${{ secrets.REARM_API_ID }}
+          rearm_api_key: ${{ secrets.REARM_API_KEY }}
           path: frontend
-          reliza_project_id: 59cd4dd5-01bb-4ff7-be20-766e0161cb49
+          rearm_project_id: 0e803615-50e6-4a3f-9fcb-4ee8d814b2c7
           enable_sbom: 'true'
 
   build-helm:
@@ -48,16 +46,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: RelizaHub Build And Submit Release metadata action
-        uses: relizaio/reliza-helm-action@master
+        uses: relizaio/rearm-helm-action@main
         with:
           registry_username: ${{ secrets.DOCKER_LOGIN }}
           registry_password: ${{ secrets.DOCKER_TOKEN }}
           registry_host: registry.relizahub.com/d94ef72b-5c1b-486e-9af9-dfd5740e93d8-private
           helm_chart_name: rebom
-          reliza_api_id: ${{ secrets.RELIZA_API_ID }}
-          reliza_api_key: ${{ secrets.RELIZA_API_KEY }}
-          reliza_api_url: https://test.relizahub.com
+          rearm_api_id: ${{ secrets.REARM_API_ID }}
+          rearm_api_key: ${{ secrets.REARM_API_KEY }}
           path: helm
-          reliza_project_id: 85190301-6fea-463d-9465-06ef88a1bafd
+          rearm_project_id: fc6290b7-90d2-4ac9-9005-a80dc714510a
           enable_sbom: 'false'
 
