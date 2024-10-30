@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Setup Rearm CLI Step
-        uses: relizaio/setup-rearm-cli-action
+        uses: relizaio/setup-rearm-cli-action@main
       - name: Test rearm
         shell: bash
         run: |
