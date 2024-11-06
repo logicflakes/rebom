@@ -21,7 +21,7 @@ jobs:
           rearm_api_id: ${{ secrets.REARM_API_ID }}
           rearm_api_key: ${{ secrets.REARM_API_KEY }}
           path: backend
-          rearm_project_id: cf481856-a031-4605-8983-dd5f12c435af
+          rearm_project_id: 71a14f16-0ee1-49eb-9a8b-d0c4b7cf7acd
           enable_sbom: 'true'
   build-frontend:
     name: Build And Push Frontend
@@ -38,7 +38,7 @@ jobs:
           rearm_api_id: ${{ secrets.REARM_API_ID }}
           rearm_api_key: ${{ secrets.REARM_API_KEY }}
           path: frontend
-          rearm_project_id: 20e645ea-53a6-46cc-9c2c-51e57abfb4a7
+          rearm_project_id: 33cf7711-03b5-4f91-aca4-52c7ace9c87d
           enable_sbom: 'true'
 
   build-helm:
@@ -55,6 +55,6 @@ jobs:
           rearm_api_id: ${{ secrets.REARM_API_ID }}
           rearm_api_key: ${{ secrets.REARM_API_KEY }}
           path: helm
-          rearm_project_id: 1e75421c-7e53-4d35-95cd-47270206be2f
+          rearm_project_id: d58ea080-0479-4116-8304-6cc74769706d
           enable_sbom: 'false'
 
