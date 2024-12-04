@@ -40,21 +40,3 @@ jobs:
           path: frontend
           rearm_component_id: 9c75a337-8639-4b78-a51a-bb36df9d0c86
           enable_sbom: 'true'
-
-  build-helm:
-    name: Build And Push Helm Chart
-    runs-on: ubuntu-latest
-    steps:
-      - name: RelizaHub Build And Submit Release metadata action
-        uses: relizaio/rearm-helm-action@main
-        with:
-          registry_username: ${{ secrets.DOCKER_LOGIN }}
-          registry_password: ${{ secrets.DOCKER_TOKEN }}
-          registry_host: registry.relizahub.com/d94ef72b-5c1b-486e-9af9-dfd5740e93d8-private
-          helm_chart_name: rebom
-          rearm_api_id: ${{ secrets.REARM_API_ID }}
-          rearm_api_key: ${{ secrets.REARM_API_KEY }}
-          path: helm
-          rearm_component_id: ac29d4b6-5404-43c2-bf41-ccde8694a53f
-          enable_sbom: 'false'
-
